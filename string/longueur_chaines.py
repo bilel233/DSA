@@ -6,6 +6,17 @@ def longueur(s):
 
     return len(s)
 
+# en creant sa propre methode on peut renvoyer la longueur d'une chaine
+
+def ma_methode(s):
+    """
+    renvoie la longueur d'une chaine de caractere
+    """
+
+    cpt = 0
+    for i in s:
+        cpt+=1
+    return cpt
 
 if __name__ == '__main__':
     s = "abc"
@@ -14,4 +25,8 @@ if __name__ == '__main__':
     assert longueur(s) == 3
     assert longueur(s1) == 0
     assert longueur(s2) == 1
+    # on va tester la fonction ma_methode
+
+    assert ma_methode(s) == 3
+    assert ma_methode(s1) == 0
 
