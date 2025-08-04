@@ -49,3 +49,23 @@ top_element = topElelemt(stack_1)
 print(f"{top_element}")
 #print(f"voici ma stack : {stack_1}")
 
+# on verifie si la pile est vide maintenant.
+
+def isEmpty(stack):
+    """renvoie true si la pile est vide. False sinon"""
+
+    return len(stack) == 0 # en une seule instruction
+
+# on teste maintenant
+
+stack_2 = []
+
+res = isEmpty(stack_2)
+print(f"la stack est vide : {res} ")
+
+# et dans l'autre cas
+
+stack_2.append(2)
+res = isEmpty(stack_2)
+print(f"la stack n'est plus vide : {res}")
+
