@@ -4,6 +4,8 @@
 
 # on suit le principe LIFO
 
+from collections import deque
+
 if __name__ == '__main__':
 
     stack = []      # la structure de list est utilise comme une pile.
@@ -24,6 +26,30 @@ if __name__ == '__main__':
 
     print(f"Voici l'etat de ma pile {stack}")
 
-    
+    # on va maintenant travailler avec dequeue()
+
+    deq = deque()
+
+    deq.append('a')
+    deq.append('b')
+    deq.append('c')
+
+    print(f"{deq}")
+
+    print("suppression des elts dans la dequeue")
+
+    deq.pop()
+    print(f"{deq}")
+    deq.pop()
+    print(f"{deq}")
+    deq.pop()
+    print(f"{deq}")
+
+    # que se passe quand la dequeue est vide ?
+
+    #deq.pop() impossible qd la dequeue est vide 
+
+
+
 
 
