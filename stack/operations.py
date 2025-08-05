@@ -69,3 +69,28 @@ stack_2.append(2)
 res = isEmpty(stack_2)
 print(f"la stack n'est plus vide : {res}")
 
+
+# connaitre la taille de la stack
+
+stack_3 = [] # on declare une pile vide
+
+# l'operation len permet de connaitre la taille de la stack
+
+def sizeStack(stack):
+    """renvoie la taille de la stack"""
+    return len(stack)
+
+assert sizeStack(stack_3) == 0 # la pile a ici 0 elt ; elle est vide.
+
+stack_3.append(12) # la stack a 1 elt maintenant
+
+assert sizeStack(stack_3) == 1
+
+stack_3.append(13)
+assert sizeStack(stack_3) == 2
+
+
+
+
+
+
