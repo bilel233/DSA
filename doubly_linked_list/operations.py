@@ -31,6 +31,17 @@ def affichage_reverse(head):
         r = r.prev
     
 
+# travaillons maintenant avec une fonction recursive
+
+def affichage_recursive(head):
+    """affiche les valeurs de la liste de maniere recursive"""
+
+    if head is None:
+        return # on sort de la fonction sans renvoyer aucune valeur
+    else:
+        print(f"{head.val}",end= " ")
+        affichage_recursive(head.next)
+
 
 
 if __name__ == '__main__':
@@ -56,3 +67,7 @@ if __name__ == '__main__':
     affichage_elements(n1)
     print()
     affichage_reverse(n1)
+
+    print()
+
+    affichage_recursive(n1)
