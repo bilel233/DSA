@@ -50,7 +50,21 @@ def reverse_affichage(tail):
         print(f"{reverse.val}",end= " ")
         reverse = reverse.prev
     
+# passons aux operations d'insertions
 
+def insertion_debut(head,val):
+    """
+    insert un noeud au debut de la liste chainee
+    """
+
+    node = Node(val)
+    #if head is None:
+     #   return node
+    
+    node.next = head
+    head.prev = node
+        
+    return node
 
 
 if __name__ == '__main__':
@@ -83,3 +97,7 @@ if __name__ == '__main__':
 
     print("\n")
     reverse_affichage(n5)
+    print("\n")
+    # go pour tester l'insertion au debut de la liste chainee
+    insertion_debut(n1,10)
+    affichage_elements(n1.prev)
