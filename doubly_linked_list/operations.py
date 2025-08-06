@@ -42,6 +42,15 @@ def affichage_recursive(head):
         print(f"{head.val}",end= " ")
         affichage_recursive(head.next)
 
+def reverse_affichage(tail):
+    """affiche les elts mais dans l'ordre inversee"""
+
+    reverse = tail
+    while reverse is not None:
+        print(f"{reverse.val}",end= " ")
+        reverse = reverse.prev
+    
+
 
 
 if __name__ == '__main__':
@@ -71,3 +80,6 @@ if __name__ == '__main__':
     print()
 
     affichage_recursive(n1)
+
+    print("\n")
+    reverse_affichage(n5)
