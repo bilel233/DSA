@@ -32,10 +32,17 @@ def maximum(tab):
 
     return max(tab)
 
-
+def second_largest(tab):
+    """renvoie le second largest elt dans tab"""
+    tab.sort()
+    for i in range(len(tab)-1,-1,-1):
+        if tab[i] != tab[len(tab)-1]:
+            return tab[i]
+    return -1
 
 if __name__ == '__main__':
-    tab = [1,2,3,10,100]
+    tab = [1,2,3,20,10,100]
+    arr = [12, 35, 1, 10, 28, 1]
     res = maximun_array(tab,5)
     print(f"{res}")
     # testons la fonctions recursive
@@ -49,6 +56,13 @@ if __name__ == '__main__':
     res = maximum(tab)
 
     print(f"{res}")
+
+    print()
+    # tests de la fonction second largest elt
+
+    res = second_largest(arr)
+
+    print(f"le second largest elt est {res}")
 
 
 
