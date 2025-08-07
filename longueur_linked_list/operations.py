@@ -21,6 +21,16 @@ def longueur(head):
 
     return cpt
 
+# de maniere recursive maintenant,
+
+def longueur_recursive(head):
+    """renvoie la longueur de la liste chainee"""
+
+    if head is None:
+        return 0
+    return 1 + longueur_recursive(head.next)
+
+
 if __name__ == '__main__':
     n1 = Node(1)
     n2 = Node(2)
@@ -40,3 +50,7 @@ if __name__ == '__main__':
     # on rappelle la fonction longueur
 
     assert longueur(n1) == 4
+
+    # testons la fonction recursive
+
+    assert longueur_recursive(n1)==4
