@@ -25,6 +25,14 @@ def largest_recursive(tab,i):
 
     return max(res,tab[i])
 
+# maintenant, en travaillant avec un builtin python
+
+def maximum(tab):
+    """renvoie l'elt maximum dans tab"""
+
+    return max(tab)
+
+
 
 if __name__ == '__main__':
     tab = [1,2,3,10,100]
@@ -34,6 +42,13 @@ if __name__ == '__main__':
     print()
     res_1 = largest_recursive(tab,0)
     print(f"{res_1}")
+
+    print()
+    print("tests de la fonction maximum\n")
+
+    res = maximum(tab)
+
+    print(f"{res}")
 
 
 
