@@ -29,6 +29,23 @@ def count_nodes_recursive(head):
     
     return 1 + count_nodes_recursive(head.next)
 
+# creons une fonction pour afficher les elt d'une liste chainee
+
+def print_val(head):
+    """
+    affiche les elts d'une liste chainee
+    """
+
+    current = head
+    while current is not None:
+        print(f" {current.val} ",end="")
+        if current.next is not None:
+            print(f"->",end="")
+        # sinon ne rien faire
+        current=current.next
+    print()
+
+
 
 
 if __name__ == '__main__':
@@ -50,3 +67,7 @@ if __name__ == '__main__':
     assert count_nodes_recursive(n1) == 3
 
     print(f"le test est passe")
+
+    print()
+
+    print_val(n1)
