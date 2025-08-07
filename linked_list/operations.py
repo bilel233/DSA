@@ -45,6 +45,15 @@ def print_val(head):
         current=current.next
     print()
 
+def print_val_recursive(head):
+    """affiche les val de la liste chainee de maniere recursive"""
+
+    if head is None:
+        return
+    print(head.val)
+    print_val_recursive(head.next)
+
+
 
 
 
@@ -71,3 +80,7 @@ if __name__ == '__main__':
     print()
 
     print_val(n1)
+
+    print()
+
+    print_val_recursive(n1)
