@@ -56,7 +56,6 @@ def print_val_recursive(head):
 
 
 
-
 if __name__ == '__main__':
     # on va hardcoder la linked list
 
