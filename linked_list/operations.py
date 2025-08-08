@@ -139,8 +139,11 @@ def insert_at_end(head,data):
 
     return head
 
+# apprenons a supprimer une linked list
+
 
     
+
 
 if __name__ == '__main__':
     # on va hardcoder la linked list
@@ -176,4 +179,12 @@ if __name__ == '__main__':
 
     node_insertion_end = insert_at_end(n1,-150)
     print_val_recursive(n1)
+
+
+    # testons la suppression de la linked list
+
+    #delete_linked_list(res)
+    print()
+    res = None
+    print_val_recursive(res)
 
