@@ -141,7 +141,15 @@ def insert_at_end(head,data):
 
 # apprenons a supprimer une linked list
 
+def delete_node_begining(head):
+    """supprime le noeud au debut de la liste chainee"""
+    if head is None:
+        return None
 
+    current = head
+    head = head.next
+    del current
+    return head
     
 
 
@@ -187,4 +195,3 @@ if __name__ == '__main__':
     print()
     res = None
     print_val_recursive(res)
-
