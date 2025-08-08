@@ -54,7 +54,18 @@ def print_val_recursive(head):
     print_val_recursive(head.next)
 
 
+# voyons maintennat les operations d'insertions pour la linked list
 
+def insert_begining(head,val):
+    """insere un nouveau noeud au debut de las liste chainee"""
+
+    new_node = Node(val)
+
+    new_node.next = head
+
+    head = new_node
+
+    return new_node
 
 
 if __name__ == '__main__':
@@ -84,3 +95,10 @@ if __name__ == '__main__':
     print()
 
     print_val_recursive(n1)
+
+    print("testons la fonction insert\n")
+
+    #new_node = Node(100)
+    res = insert_begining(n1,100000)
+
+    print_val_recursive(res)
