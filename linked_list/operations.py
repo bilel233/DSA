@@ -130,13 +130,17 @@ def insert_at_position(head,position,data):
 
     return head
 
+# apprenons a supprimer une linked list
 
+def delete_linked_list(head):
+    """supprime la linked list"""
 
+    # en une seule instruction
 
+    head = None
 
-
-        
     
+
 
 
 if __name__ == '__main__':
@@ -189,4 +193,11 @@ if __name__ == '__main__':
     print()
     res_insertion_at_position = insert_at_position(res,1,200)
 
+    print_val_recursive(res)
+
+    # testons la suppression de la linked list
+
+    #delete_linked_list(res)
+    print()
+    res = None
     print_val_recursive(res)
