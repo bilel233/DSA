@@ -128,7 +128,19 @@ def insert_at_position(head,position,data):
     head.next = new_node
 
     return head
+def insert_at_end(head,data):
+    """insere le noeud a la fin de la liste chainee"""
+    new_node = Node(data)
+    current = head
 
+    while current.next is not None:
+        current = current.next
+    current.next = new_node
+
+    return head
+
+
+    
 
 if __name__ == '__main__':
     # on va hardcoder la linked list
@@ -157,3 +169,11 @@ if __name__ == '__main__':
     print()
 
     print_val_recursive(n1)
+
+    print()
+
+    print("testons l'insertion a la fin de la liste chainee\n")
+
+    node_insertion_end = insert_at_end(n1,-150)
+    print_val_recursive(n1)
+
