@@ -67,6 +67,30 @@ def insert_begining(head,val):
 
     return new_node
 
+def insert_node_position(head,key,new_data):
+    """insere un noeud a une position specifique"""
+
+    current = head
+
+    while current is not None:
+        if current.val == key:
+            break
+        current=current.next
+
+    if current is None:
+        print("la cle pour le noeud n'existe pas")
+        return head
+    
+    #dans l'autre cas on commence la creation du noeud
+
+    new_node = Node(new_data)
+
+    new_node.next = current.next
+    current.next = new_node
+
+    return head
+
+
 
 if __name__ == '__main__':
     # on va hardcoder la linked list
@@ -101,4 +125,8 @@ if __name__ == '__main__':
     #new_node = Node(100)
     res = insert_begining(n1,100000)
 
+    print_val_recursive(res)
+    print()
+
+    res_new = insert_node_position(n1,2,-102)
     print_val_recursive(res)
