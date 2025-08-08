@@ -149,6 +149,24 @@ def delete_node_begining(head):
     del current
     return head
 
+def delete_node_at_position(head,position):
+    """supprime un noeud a une certaine position"""
+
+    p = head
+
+    q = head.next
+
+    for _ in range(1,position):
+        p = q
+        q = q.next
+
+    p = q.next
+    del q
+    return head
+
+    
+
+
 
 
 if __name__ == '__main__':
@@ -223,3 +241,8 @@ if __name__ == '__main__':
 
     res = delete_node_begining(a1)
     print_val_recursive(res) # sa marche yeeep
+
+    # testons la fonction pour supprimer un noeud a une position specifique
+
+    res = delete_node_at_position(a1,2)
+    print_val_recursive(res)
