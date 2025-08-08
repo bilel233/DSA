@@ -90,6 +90,24 @@ def insert_node_position(head,key,new_data):
 
     return head
 
+# inserons un noeud avant une position donne
+
+def insert_before_key(head,key,new_data):
+    """On insere un noeud avant le noeud trouve"""
+
+    if head is None:
+        return None
+    elif head.val == key:
+        new_node = Node(new_data)
+        new_node.next = head
+       # head.next = new_node
+
+        return new_node
+    # appel recursif
+
+    head.next = insert_before_key(head.next, key,new_data)
+    return head
+    
 
 
 if __name__ == '__main__':
@@ -130,3 +148,8 @@ if __name__ == '__main__':
 
     res_new = insert_node_position(n1,2,-102)
     print_val_recursive(res)
+
+    print("testons la fonction insertion avant un noeud specifique")
+    print()
+    res_before_key = insert_before_key(res,3,4)
+    print_val_recursive(res_before_key)
