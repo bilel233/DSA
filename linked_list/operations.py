@@ -67,9 +67,20 @@ def search_key(head,key):
         current = current.next
     return -1
 
+# recherchons un elt nais de maniere recursive
 
+def search_elt_recursive(head,key):
+    """
+    renvoie false si l'elt nest pas present dans la linked list
+    """
 
-
+    if head is None:
+        return False
+    elif head.val == key:
+        return key
+    else:
+        return search_elt_recursive(head.next,key)
+    
 
 if __name__ == '__main__':
     # on va hardcoder la linked list
@@ -104,4 +115,12 @@ if __name__ == '__main__':
     res = search_key(n1,-1)
     print(f"{res}")
 
-    
+    print()
+
+    value = search_elt_recursive(n1,20)
+
+    if value == 20:
+        print("yep")
+    else:
+        print("Nop")
+
