@@ -55,6 +55,80 @@ def print_val_recursive(head):
 
 
 
+# voyons maintennat les operations d'insertions pour la linked list
+
+def insert_begining(head,val):
+    """insere un nouveau noeud au debut de las liste chainee"""
+
+    new_node = Node(val)
+
+    new_node.next = head
+
+    head = new_node
+
+    return new_node
+
+def insert_node_position(head,key,new_data):
+    """insere un noeud a une position specifique"""
+
+    current = head
+
+    while current is not None:
+        if current.val == key:
+            break
+        current=current.next
+
+    if current is None:
+        print("la cle pour le noeud n'existe pas")
+        return head
+    
+    #dans l'autre cas on commence la creation du noeud
+
+    new_node = Node(new_data)
+
+    new_node.next = current.next
+    current.next = new_node
+
+    return head
+
+# inserons un noeud avant une position donne
+
+def insert_before_key(head,key,new_data):
+    """On insere un noeud avant le noeud trouve"""
+
+    if head is None:
+        return None
+    elif head.val == key:
+        new_node = Node(new_data)
+        new_node.next = head
+       # head.next = new_node
+
+        return new_node
+    # appel recursif
+
+    head.next = insert_before_key(head.next, key,new_data)
+    return head
+
+def insert_at_position(head,position,data):
+    """insere le noeud a une position specifique pos"""
+
+    if position < 1:
+        return
+    current = head
+    
+    for _ in range(1,position-1):
+        current = current.next
+
+    # on est arrive avnt le noeud a inserer
+
+    new_node = Node(data)
+
+    new_node.next = head.next
+
+    head.next = new_node
+
+    return head
+
 
 if __name__ == '__main__':
     # on va hardcoder la linked list
