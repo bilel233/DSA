@@ -54,6 +54,20 @@ def print_val_recursive(head):
     print_val_recursive(head.next)
 
 
+#creons une fonction pour chercher un elt dans la liste chaines
+def search_key(head,key):
+    """renvoie l'elt present dans la liste chaine. sinon -1"""
+
+    current = head
+
+    while current is not None:
+        if current.val == key:
+            return key
+        # sinon ne ruen faire faire
+        current = current.next
+    return -1
+
+
 
 
 
@@ -84,3 +98,10 @@ if __name__ == '__main__':
     print()
 
     print_val_recursive(n1)
+
+    # testons la fonctions search_key
+
+    res = search_key(n1,-1)
+    print(f"{res}")
+
+    
