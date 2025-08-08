@@ -54,6 +54,8 @@ def print_val_recursive(head):
     print_val_recursive(head.next)
 
 
+
+
 # voyons maintennat les operations d'insertions pour la linked list
 
 def insert_begining(head,val):
