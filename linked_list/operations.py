@@ -107,6 +107,30 @@ def insert_before_key(head,key,new_data):
 
     head.next = insert_before_key(head.next, key,new_data)
     return head
+
+def insert_at_position(head,position,data):
+    """insere le noeud a une position specifique pos"""
+
+    if position < 1:
+        return
+    current = head
+    
+    for _ in range(1,position-1):
+        current = current.next
+
+    # on est arrive avnt le noeud a inserer
+
+    new_node = Node(data)
+
+    new_node.next = head.next
+
+    head.next = new_node
+
+    return head
+
+
+
+        
     
 
 
@@ -153,3 +177,11 @@ if __name__ == '__main__':
     print()
     res_before_key = insert_before_key(res,3,4)
     print_val_recursive(res_before_key)
+
+    print()
+
+    print("testons la fonction insertyion_at_position")
+    print()
+    res_insertion_at_position = insert_at_position(res,1,200)
+
+    print_val_recursive(res)
