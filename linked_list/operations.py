@@ -139,7 +139,15 @@ def delete_linked_list(head):
 
     head = None
 
+def delete_node_begining(head):
+    """supprime le noeud au debut de la liste chainee"""
+    if head is None:
+        return None
     
+    current = head
+    head = head.next
+    del current
+    return head
 
 
 
@@ -201,3 +209,17 @@ if __name__ == '__main__':
     print()
     res = None
     print_val_recursive(res)
+
+    print()
+    # creation d'une nouvelle liste chainee
+
+    a1 = Node(1)
+    a2 = Node(2)
+    a3 = Node(3)
+
+    a1.next = a2
+    a2.next = a3
+    a3.next = None
+
+    res = delete_node_begining(a1)
+    print_val_recursive(res) # sa marche yeeep
